@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
 import './App.css';
-import Todo from './Todo'
+import Todo from './Todo';
+import db from './firebase';
 
 function App() {
   //state = temp storage
-  const [todos, setTodos] = useState(["dos","take rubbish out","helu"]);
+  const [todos, setTodos] = useState([]);
   //empty array for temp storage
   const [input, setInput] = useState('');
+
+  useEffect(() => {
+    db.collection('todos').onSnapshot(snapshot => {
+      setTodos(snapshot.docs.map(doc =>doc.data().todo))
+    })
+  }, [])
 
   const addTodo = (event)=>{
     event.preventDefault(); //prevents reloading

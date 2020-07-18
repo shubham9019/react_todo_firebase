@@ -13,4 +13,4 @@
 
   const db=firebaseApp.firestore();
   
-  export{ db };
+  export default db ;
