@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
 import './App.css';
+import Todo from './Todo'
 
 function App() {
   //state = temp storage
@@ -29,10 +30,10 @@ function App() {
       {/* <button onClick = {addTodo}>todo</button> */}
       </form>
 
-      
+
       <ul>
         {todos.map(todo=>(
-          <li>{todo}</li>
+          <Todo text={todo}/>
         ))}
         
       </ul>
