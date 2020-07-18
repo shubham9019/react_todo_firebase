@@ -10,6 +10,7 @@ function App() {
   const addTodo = (event)=>{
     event.preventDefault(); //prevents reloading
     setTodos([...todos, input]);
+    setInput('');
   }
 
   return (
