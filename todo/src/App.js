@@ -30,15 +30,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>React TODO App</h1>
       <form> 
       {/* <input value={input} onChange={event => setInput(event.target.value)}/> */}
       <FormControl>
-        <InputLabel>Write a todo</InputLabel>
+        <InputLabel>Write a Task!</InputLabel>
         <Input value={input} onChange={event => setInput(event.target.value)}/>
       </FormControl>
       <Button disabled={!input} type="submit" onClick = {addTodo} variant="contained" color="primary">
-        todo
+        Add
       </Button>
       {/* <button onClick = {addTodo}>todo</button> */}
       </form>
